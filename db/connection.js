@@ -1,6 +1,12 @@
 const { MongoClient } = require('mongodb');
 
-const uri = 'mongodb+srv://vinayak:vinumongo@cluster-test.4idly.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-test';
+const dotenv = require('dotenv');
+dotenv.config();
+
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/inventorySystemV2';
+if (!process.env.MONGODB_URI) {
+  console.warn('MONGODB_URI not found in environment variables. Using default local URI.');
+}
 const dbName = 'inventorySystemV2'; // Changed database name
 
 let client;
