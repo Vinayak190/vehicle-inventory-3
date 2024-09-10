@@ -13,8 +13,8 @@ function createResponse(res) {
       return this;
     },
     json: function(data) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Content-Type', 'application/json');
-      res.setHeader('Access-Control-Allow-Origin', 'https://66e097d732dd1494b88c1a43--visionary-granita-7b51ce.netlify.app');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
       res.end(JSON.stringify(data));
@@ -25,7 +25,7 @@ function createResponse(res) {
 async function handleRequest(req, res) {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', 'https://66e097d732dd1494b88c1a43--visionary-granita-7b51ce.netlify.app');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.writeHead(204);
