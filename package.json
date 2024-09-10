@@ -1,0 +1,12 @@
+{
+  "name": "inventory-system-backend",
+  "version": "1.0.0",
+  "description": "Backend for inventory system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mongodb": "^4.13.0"
+  }
+}
